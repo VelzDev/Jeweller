@@ -4,26 +4,31 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Jeweller.Concrete;
-using Microsoft.EntityFrameworkCore;
+//using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.SqlServer;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Menu;
 using System.Runtime.Remoting.Contexts;
+using System.Data.Entity;
 
 namespace Jeweller.Context
 {
-
-	public class YourDbContext : DbContext
+	[DbConfigurationType(typeof(DbConfiguration))]
+	public class JewellerContext : System.Data.Entity.DbContext
 	{
-		public DbSet<Customer> Customers { get; set; }
+		public JewellerContext() : base("YourConnectionStringName")
+		{
+
+		}
+		public DbSet<User> Users { get; set; }
 		public DbSet<Product> Products { get; set; }
 		public DbSet<Category> Categories { get; set; }
-		public DbSet<CartItem> CartItems { get; set; }
-		public DbSet<FavoriteItem> FavoriteItems { get; set; }
+		public DbSet<Cart> CartItems { get; set; }
+		public DbSet<Favorite> FavoriteItems { get; set; }
 		public DbSet<Sale> Sales { get; set; }
 
-		protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+		protected override void OnModelCreating(DbModelBuilder modelBuilder)
 		{
-			// Указать строку подключения к вашей базе данных
-			optionsBuilder.UseSqlServer("YourConnectionString");
+			// Ваши настройки модели
 		}
 	}
 }

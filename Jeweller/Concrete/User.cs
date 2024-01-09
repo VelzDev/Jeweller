@@ -17,6 +17,8 @@ namespace Jeweller.Concrete
 		public string Password { get; set; }
 		public string Email { get; set; }
 
+		public bool admin { get; set; }
+
 		public virtual ICollection<Cart> CartItems { get; set; }
 		public virtual ICollection<Favorite> FavoriteItems { get; set; }
 		public virtual ICollection<Sale> Sales { get; set; }

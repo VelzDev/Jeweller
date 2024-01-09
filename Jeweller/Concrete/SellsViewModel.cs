@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace Jeweller.Concrete
 {
-	public class Sale
+	internal class SellsViewModel
 	{
 		public int Id { get; set; }
-		public int ProductId { get; set; }
-		public int UserId { get; set; }
+		public string ProductName { get; set; }
+		public string UserName { get; set; }
 		public DateTime SaleDate { get; set; }
 		public decimal TotalPrice { get; set; }
 		public string PaymentMethod { get; set; }
@@ -18,8 +18,5 @@ namespace Jeweller.Concrete
 		public string ExpiryDate { get; set; }
 		public string CardType { get; set; }
 		public string Cvc { get; set; }
-
-		public virtual User User { get; set; }
-		public virtual Product Product { get; set; }
 	}
 }

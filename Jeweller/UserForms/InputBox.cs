@@ -10,11 +10,18 @@ using System.Windows.Forms;
 
 namespace Jeweller
 {
-	public partial class Form1 : Form
+	public partial class InputBox : Form
 	{
-		public Form1()
+		public int SelectedNumber { get; private set; }
+		public InputBox()
 		{
 			InitializeComponent();
+		}
+
+		private void button1_Click(object sender, EventArgs e)
+		{
+			SelectedNumber = (int)numericUpDown1.Value;
+			this.Close();
 		}
 	}
 }
