@@ -45,6 +45,6 @@
 
 > Честно, 2 дня думал только над тем, как можно реализовать относительно визуальный каталог, работая через статичные объекты
 
-*приношу свои извинения и предпочту оставить данный проект приватным :)*
+*приношу свои извинения :)*
 
 <h1 align="center">Your's sincerely,  <a href="https://vk.com/dikiy_marketolog/" target="_blank">VelzDev Studio</a> <img src="https://github.com/blackcater/blackcater/raw/main/images/Hi.gif" height="32"/></h1>
